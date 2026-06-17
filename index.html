@@ -1,0 +1,127 @@
+<!-- Mikael Jatobá - ATV04 - Turma 523 -->
+<!-- A Página Principal -->
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mikael's Site</title>
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+</head>
+
+<style>
+
+/* Classe criada para definir características da div mestre (div principal)*/
+.div_mestre {
+    width: 80%; /* a div_mestre vai ocupar 80% da página*/
+    height: 750px; /* a altura da div_mestre será de 750px */
+    flex-direction: column; /* organiza os elementos em colunas (verticalmente) */ 
+    display: flex; /* organiza automaticamente os elementos */ 
+    margin-top: 1.5%; /* a distância do topo da página até o cabeçalho */
+    margin-left: 10%; /* a distância da esquerda da página até o cabeçalho */
+    margin-right: 10%; /* a distância da direita da página até o cabeçalho */
+    margin-bottom: 1.5%; /* a distância da parte de baixo da página até o cabeçalho*/
+
+}
+
+/* ID responsável por criar a caixa principal do cabeçalho da página */
+#cabeçalho {
+    justify-content: center; /* alinha verticalmente */
+    align-items: center; /* alinha horizontalmente */
+    display: flex; /* organiza automaticamente os elementos */
+    background-color: rgb(57, 66, 66); /* define a cor de fundo */
+    width: 100%; /* o cabeçalho vai ocupar 100% da largura da div_mestre */
+    height: 100px; /* o cabeçalho vai ocupar 100px de altura dentro da div_mestre*/
+}
+
+/*Classe que definirá como os itens se organizarão dentro do corpo*/
+.conteudos_corpo{
+    display: flex; /* organiza automaticamente os elementos */ 
+    flex: 1; /* faz com que a div ocupe os espaços vagos */
+}
+
+/* ID responsável por criar a caixa com os botões para trocar de página */
+#conteudos {
+    float: left; /* "alinha" à esquerda da div_mestre */
+    background-color: rgb(70, 80, 80); /* define a cor de fundo */
+    height: 100%; /* o conteúdo vai ocupar 100% da altura do "conteudos_corpo" */
+    width: 20%; /* o conteúdo vai ocupar 20% da largura do "conteudos_corpo" */
+    padding: 10px; /* define a distância do conteúdo dentro do "conteúdo" até a borda da div */
+}
+
+/* ID responsável por criar a caixa principal do cabeçalho da página (onde vai ficar o iframe) */
+#corpo {
+    display: flex; /* organiza automaticamente os elementos */ 
+    float: left; /* "alinha" à esquerda da div_mestre (ao lado do conteúdo) */
+    background-color: rgb(255, 255, 255); /* define a cor de fundo*/
+    height: 100%; /* o conteúdo vai ocupar 100% da altura do "conteudos_corpo" */
+    width: 80%; /* o conteúdo vai ocupar 80% da largura do "conteudos_corpo" */
+}
+
+/* ID responsável por criar a caixa principal do rodapé da página */
+#rodape {
+    background-color: rgb(62, 62, 68); /* define a cor de fundo*/
+    justify-content: center; /* alinha verticalmente */
+    align-items: center; /* alinha horizontalmente */
+    display: flex; /* organiza automaticamente os elementos */
+    width: 100%; /* o cabeçalho vai ocupar 100% da largura da div_mestre */
+    height: 100px; /* a altura do rodapé será de 100px */
+}
+
+/* ID responsável por caracterizar os links presentes no ID "conteudos"*/
+#conteudos a {
+    color: aliceblue; /* define a cor do texto */
+    text-decoration: none; /* tira as decorações do texto (sublinhado) */
+    width: 100%; /* a parte clickável do link ocupa a caixa toda */
+    height: 100%; /* a parte clickável do link ocupa a caixa toda */    
+    display: flex; /* Transforma o link em uma caixa flexível */
+    justify-content: center; /*  Centraliza o texto horizontalmente */
+    align-items: center; /*  Centraliza o texto verticalmente */
+}
+
+/* classe do iframe presente e as características que ele terá */
+.massa {
+    width: 100%; /* o iframe ocupa 100% da largura do local onde ele está (corpo) */
+    height: 100%; /* o iframe ocupa 100% da altura do local onde ele está (corpo) */
+    border: none; /* retira a borda do iframe */
+}
+
+/* classe criada para definir padrões gerais de textos*/
+.padraotxt{
+    color: aliceblue; /* define a cor do texto */
+    text-align: center; /* os textos serão alinhados ao centro */
+}
+
+/*classe criada para definir padrões específicos para os botões */
+.botoes{
+    text-align: center; /*os textos serão alinhados ao centro */
+    font-size: 30px; /* o texto de parágrafos terão 30px de tamanho */
+    border-radius: 15px; /* adiciona uma borda com arredondamento de 15px */
+    border: 2px solid black ; /* Adiciona uma borca com 2px de espessura, sólida e de cor preta */ 
+    background-color: rgb(85, 85, 85); /* Define a cor de fundo */
+}
+
+</style>
+<body>     
+    <div class="div_mestre">
+        <div id="cabeçalho"> <h1 class="padraotxt"> Página do Mikael </h1> </div>
+        
+        <div class="conteudos_corpo" >
+            <div id="conteudos">        
+                    <p class="botoes"><a href="curriculo.html" target="iframe_fd">Currículo do Mikael</a></p>
+                    <p class="botoes"><a href="tema.html" target="iframe_fd"> 30PRAUM  </a></p>
+                </div>
+
+                <div id="corpo">
+                    <iframe class="massa" src="curriculo.html" name="iframe_fd" title="IFRAME Legal"></iframe>
+                </div>
+            </div>
+        <div id="rodape">
+            <p class="padraotxt">Mikael Jatobá - mvaj1@aluno.ifal.edu.br <br> © 2026 - Todos os direitos reservados.</p>
+        </div>
+    </div>    
+</body>
+
+</html>
